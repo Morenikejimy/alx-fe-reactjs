@@ -1,7 +1,7 @@
-
 import React from 'react';
-import RecipeList from './Components/RecipeList';
-import AddRecipeForm from './Components/AddRecipeForm'; // Import the AddRecipeForm component
+
+import RecipeList from 'src/components/RecipeList';
+import AddRecipeForm from 'src/components/AddRecipeForm'; // Import the AddRecipeForm component
 import './App.css'; // Import default Vite CSS, or create your own
 
 function App() {
