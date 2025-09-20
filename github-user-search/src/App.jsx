@@ -1,12 +1,14 @@
 import React from "react";
-import Try from "./components/try";  
+import Search from "./components/Search";
 
 function App() {
   return (
     <div>
-      <Try />   
+      <h1>GitHub User Search App</h1>
+      <Search />
     </div>
   );
 }
 
 export default App;
+
