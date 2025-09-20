@@ -1,26 +1,35 @@
-import React from 'react';
-
-import RecipeList from 'src/components/RecipeList';
-import AddRecipeForm from 'src/components/AddRecipeForm'; // Import the AddRecipeForm component
-import './App.css'; // Import default Vite CSS, or create your own
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="App" style={{ 
-      fontFamily: 'Arial, sans-serif', 
-      maxWidth: '900px', 
-      margin: '30px auto', 
-      padding: '20px', 
-      backgroundColor: '#f9f9f9', 
-      borderRadius: '10px', 
-      boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-      textAlign: 'center'
-    }}>
-      <h1>My Recipe Sharing App</h1>
-      <AddRecipeForm />   /* Render the form to add recipes */
-      <RecipeList />      /* Render the list of recipes */
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
