@@ -1,9 +1,9 @@
 // src/components/RecipeList.jsx
 import React from 'react';
-import { recipeStore } from './recipeStore'; // Adjust path based on your store location
+import { UseRecipeStore } from './recipeStore'; // Adjust path based on your store location
 
 const RecipeList = () => {
-  const recipes = recipeStore(state => state.recipes);
+  const recipes = UseRecipeStore(state => state.recipes);
 
   return (
     <div>
