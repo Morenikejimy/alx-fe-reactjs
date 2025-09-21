@@ -4,12 +4,14 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 import EditRecipeForm from './components/EditRecipeForm';
+import SearchBar from './components/SearchBar'; // ✅ new
 
 function Home() {
   return (
     <div>
       <h1>Recipe Sharing App</h1>
       <AddRecipeForm />
+      <SearchBar />   {/* ✅ Search UI */}
       <RecipeList />
     </div>
   );

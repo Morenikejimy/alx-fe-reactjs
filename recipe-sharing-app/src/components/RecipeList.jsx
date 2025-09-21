@@ -5,12 +5,16 @@ import DeleteRecipeButton from './DeleteRecipeButton';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
+  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+  const searchTerm = useRecipeStore((state) => state.searchTerm);
 
-  if (!recipes.length) return <div>No recipes yet. Add one above.</div>;
+  const displayRecipes = searchTerm ? filteredRecipes : recipes;
+
+  if (!displayRecipes.length) return <div>No recipes found.</div>;
 
   return (
     <div>
-      {recipes.map((recipe) => (
+      {displayRecipes.map((recipe) => (
         <div key={recipe.id} style={{ border: '1px solid #ddd', padding: 8, marginBottom: 8 }}>
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
