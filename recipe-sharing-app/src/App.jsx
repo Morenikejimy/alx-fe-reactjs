@@ -1,18 +1,33 @@
 // src/App.jsx
-import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
-import './App.css'; // Assuming you might have some global styles
+import RecipeDetails from './components/RecipeDetails';
+import EditRecipeForm from './components/EditRecipeForm';
 
-function App() {
+function Home() {
   return (
-    <div className="App" style={{ fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '20px auto', padding: '20px', border: '1px solid #e0e0e0', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.05)' }}>
-      <h1 style={{ textAlign: 'center', color: '#333' }}>Recipe Sharing App</h1>
+    <div>
+      <h1>Recipe Sharing App</h1>
       <AddRecipeForm />
-      <hr style={{ margin: '30px 0', border: '0', borderTop: '1px solid #eee' }} />
       <RecipeList />
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <div style={{ padding: 20 }}>
+      <nav style={{ marginBottom: 16 }}>
+        <Link to="/">Home</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recipes/:id" element={<RecipeDetails />} />
+        <Route path="/recipes/:id/edit" element={<EditRecipeForm />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </div>
+  );
+}
