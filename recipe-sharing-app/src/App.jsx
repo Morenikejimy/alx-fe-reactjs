@@ -1,5 +1,5 @@
 // src/App.jsx
-import { Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
@@ -17,17 +17,19 @@ function Home() {
 
 export default function App() {
   return (
-    <div style={{ padding: 20 }}>
-      <nav style={{ marginBottom: 16 }}>
-        <Link to="/">Home</Link>
-      </nav>
+    <Router>
+      <div style={{ padding: 20 }}>
+        <nav style={{ marginBottom: 16 }}>
+          <Link to="/">Home</Link>
+        </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipes/:id" element={<RecipeDetails />} />
-        <Route path="/recipes/:id/edit" element={<EditRecipeForm />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <Route path="/recipes/:id/edit" element={<EditRecipeForm />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
