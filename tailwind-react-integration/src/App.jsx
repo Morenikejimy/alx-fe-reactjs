@@ -1,4 +1,4 @@
-import userProfile from './components/UserProfile';
+import UserProfile from './components/UserProfile';
 function App (){
   return (
     <>
